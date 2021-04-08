@@ -1,20 +1,22 @@
 import React from "react";
 
-export const Square = ({ onClick, value, line, middle }) => {
-  function pressed() {
-    if (!value) {
-      onClick();
+export const Square = ({ onClick, value, line, winnerStatus, playerOne, playerTwo }) => {
+
+  function press() {
+    if (!winnerStatus) {
+      if (!value) {
+        onClick();
+      }
     }
   }
 
   const className = "square" + 
-  (middle ? " middle" : "") + 
-  (value === "X" ? " cross" : "") + 
-  (value === "O" ? " zero" : "");
+  (value === playerOne ? " cross" : "") + 
+  (value === playerTwo ? " zero" : "");
 
   return (
     <>
-      <div className={className} onClick={pressed}></div>
+      <div className={className} onClick={press}></div>
     </>
   );
 };
