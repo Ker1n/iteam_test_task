@@ -27,7 +27,6 @@ export const Game = ({ playerOne, playerTwo }) => {
     status = "Next Player is " + (isXNext ? playerOne : playerTwo);
   }
 
-    
   React.useEffect(()=>{ 
     if(winner === playerOne) { 
       setScorePlayerOne(scorePlayerOne + 1)
@@ -42,8 +41,6 @@ export const Game = ({ playerOne, playerTwo }) => {
       setSquare(Array(9).fill(null));
     }, 1500);
   }
-
-  
 
   function renderSquare(i) {
     return (
