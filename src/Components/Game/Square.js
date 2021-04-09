@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Square = ({ onClick, value, line, winnerStatus, playerOne, playerTwo }) => {
+export const Square = ({ onClick, value, winnerStatus, playerOne, playerTwo }) => {
 
   function press() {
     if (!winnerStatus) {

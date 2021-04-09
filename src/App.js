@@ -1,6 +1,6 @@
 import React from "react";
-import { Game } from "./Components/Game";
-import "./Components/game.css";
+import { Game } from "./Components/Game/Game";
+import "./Components/Game/game.css";
 
 function App() {
   const [playerOne, setPlayerOne] = React.useState("test1");

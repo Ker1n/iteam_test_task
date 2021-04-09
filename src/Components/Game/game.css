@@ -1,0 +1,278 @@
+
+.game{
+    display: flex;
+    flex-direction: row-reverse;
+    color: #fff;
+}
+.score-wrapper{
+    margin: 50px 0px 0px 25px;
+}
+.score-title{
+    font-size: 48px;
+
+}
+.score-player{
+    font-size: 28px;
+}
+
+
+.status { 
+  padding: 0 0 50px 0;
+    text-transform: uppercase;
+}
+.section {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container {
+  min-width: 500px;
+}
+.square {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  
+}
+.board-row {
+  display: flex;
+  position: relative;
+}
+
+.board-wrapper {
+ 
+  background-color: #44425e;
+  border-radius: 5px;
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.board-row::before {
+  position: absolute;
+  bottom: 0;
+  left: -7.5px;
+  content: "";
+  width: 315px;
+  height: 5px;
+  background-color: #af56c7;
+  border-radius: 10px;
+}
+.bg::before {
+  display: none;
+}
+.middle::before {
+  z-index: 20;
+  position: absolute;
+  bottom: 47.5px;
+  left: -59px;
+  content: "";
+  width: 315px;
+  height: 5px;
+  background-color: #af56c7;
+  border-radius: 10px;
+  transform: rotate(-90deg);
+}
+.middle::after {
+  z-index: 20;
+  position: absolute;
+  bottom: 47.5px;
+  left: 42px;
+  content: "";
+  width: 315px;
+  height: 5px;
+  background-color: #af56c7;
+  border-radius: 10px;
+  transform: rotate(-90deg);
+}
+
+.cross:before,
+.cross:after {
+  position: absolute;
+  content: " ";
+  height: 90px;
+  width: 10px;
+  background-color: #c4c4c4;
+  
+}
+.cross:before {
+  transform: rotate(45deg);
+}
+.cross:after {
+  transform: rotate(-45deg);
+}
+
+.zero:before {
+  position: absolute;
+  top: 13px;
+  content: "";
+  height: 70px;
+  width: 70px;
+  border: #c4c4c4 solid 8px;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.input-field label:focus {
+  color: #44425e !important;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.validate {
+  color: #c4c4c4;
+}
+
+
+
+/* //lines// */
+
+.game-line { 
+  position: relative;
+
+}
+.line012::before { 
+  z-index: 20;
+  position: absolute;
+  top: 46px;
+  left: 5px;
+  content: "";
+  width: 290px;
+  height: 8px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animate;
+}
+
+
+.line345::before { 
+  z-index: 20;
+  position: absolute;
+  top: 146px;
+  left: 5px;
+  content: "";
+  width: 290px;
+  height: 8px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animate;
+}
+.line678::before { 
+  z-index: 20;
+  position: absolute;
+  top: 246px;
+  left: 5px;
+  content: "";
+  width: 290px;
+  height: 8px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animate;
+}
+.line036::before { 
+  z-index: 20;
+  position: absolute;
+  top: 5px;
+  left: 46px;
+  content: "";
+  width: 8px;
+  height: 290px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animateH;
+  
+}
+.line147::before { 
+  z-index: 20;
+  position: absolute;
+  top: 5px;
+  left: 146px;
+  content: "";
+  width: 8px;
+  height: 290px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animateH;
+ 
+}
+.line258::before { 
+  z-index: 20;
+  position: absolute;
+  top: 5px;
+  left: 246px;
+  content: "";
+  width: 8px;
+  height: 290px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  animation: 0.5s linear animateH;
+}
+
+.line048::before { 
+  z-index: 50;
+  position: absolute;
+  top: -10px;
+  left: 146px;
+  content: "";
+  width: 8px;
+  height: 320px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  transform: rotate(-45deg);
+  animation: 0.5s linear opacity;
+}
+
+.line246::before { 
+  z-index: 50;
+  position: absolute;
+  top: -10px;
+  left: 146px;
+  content: "";
+  width: 8px;
+  height: 320px;
+  background-color: #af3d38;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  animation: 0.5s linear opacity;
+}
+@keyframes animate {
+  0% {
+   
+    width: 10%;
+  }
+  100% {
+    
+    width: 100%;
+  }
+}
+@keyframes animateH {
+  0% {
+   
+    height: 0%;
+  }
+  100% {
+    
+    height: 100%;
+  }
+}
+
+@keyframes opacity { 
+  0% { 
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }
+}
