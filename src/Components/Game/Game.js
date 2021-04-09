@@ -5,6 +5,7 @@ import { GameLogic } from "./GameLogic";
 import { crossedLines } from "./lines";
 
 export const Game = ({ playerOne, playerTwo }) => {
+  
   const [squares, setSquare] = React.useState(Array(9).fill(null));
   const [isXNext, setXNext] = React.useState(true);
 
@@ -26,24 +27,23 @@ export const Game = ({ playerOne, playerTwo }) => {
     status = "Next Player is " + (isXNext ? playerOne : playerTwo);
   }
 
-  // console.log(winner, typeof winner,  typeof playerOne);
+    
+  React.useEffect(()=>{ 
+    if(winner === playerOne) { 
+      setScorePlayerOne(scorePlayerOne + 1)
+    }
+    if(winner === playerTwo) { 
+      setScorePlayerTwo(scorePlayerTwo + 1)
+    }
+  },[winner])
 
-  // if (winner || isDraw) {
-  //   setTimeout(() => {
-  //     setSquare(Array(9).fill(null));
-  //   }, 1500);
-  // }
+  if (winner || isDraw) {
+    setTimeout(() => {
+      setSquare(Array(9).fill(null));
+    }, 1500);
+  }
 
-  // React.useEffect(() => {
-
-  //     if(winner === playerOne) {
-  //       setScorePlayerOne(scorePlayerOne +1)
-  //     }
-  //     if(winner === playerTwo) {
-  //       setScorePlayerTwo(scorePlayerTwo +1)
-  //     }
-
-  // }, [ scorePlayerOne])
+  
 
   function renderSquare(i) {
     return (

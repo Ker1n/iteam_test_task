@@ -3,9 +3,9 @@ import { Game } from "./Components/Game/Game";
 import "./Components/Game/game.css";
 
 function App() {
-  const [playerOne, setPlayerOne] = React.useState("test1");
-  const [playerTwo, setPlayerTwo] = React.useState("test2");
-  const [play, setPlay] = React.useState(true);
+  const [playerOne, setPlayerOne] = React.useState("");
+  const [playerTwo, setPlayerTwo] = React.useState("");
+  const [play, setPlay] = React.useState(false);
 
   const handlerPlayerOneInput = (event) => {
     setPlayerOne(event.target.value);
@@ -44,6 +44,7 @@ function App() {
                         className="validate"
                         onChange={handlerPlayerOneInput}
                         value={playerOne}
+                        autoComplete="off"
                       />
                       <label
                         className={playerOne.length ? "active" : ""}
@@ -59,6 +60,7 @@ function App() {
                         className="validate"
                         onChange={handlerPlayerTwoInput}
                         value={playerTwo}
+                        autoComplete="off"
                       />
                       <label
                         className={playerTwo.length ? "active" : ""}
